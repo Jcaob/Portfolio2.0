@@ -1,11 +1,104 @@
-nav{
-    height: 50px;
-    background-color: black;
+
+
+:root {--timing-func: cubic-bezier(.02,.78,.31,1.17)}
+   
+
+html{
+    font-size: 16px;
+   font-family: sans-serif;
+}
+   
+
+.wrapper{
+    padding: 2rem;
+}
+   
+
+input
+{
+     display: none;
+}
+  
+
+label{
+    border-radius: 4px;
+   text-transform: uppercase;
+   cursor: pointer;
+   user-select: none;
+   
+   position: fixed;
+   z-index: 2;
+   left: 1rem;
+   top: 1rem;
+   
+   padding: .75rem 1rem;
+   
+   background-color: #efefef;
+   
+   
+}
+  
+   
+  
+      
+   
+.wrapper:has(input:checked) {
+     label{
+        background: #444444;
+        color: white
+     }
+      
+   
+}
+  
+.menu{
+    
+   width: min(250px, 80vw)
+   
+}
+
+   // 
+.sidebar{
+    display: inline-block;
+   overflow: hidden;
+   background: #181818;
+   padding-top: 4rem;
+   position: fixed;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   max-width: 0;
+   transition: all .2s var(--timing-func);
+
+   li{
+    height: 40px;
+    width: 100%;
     display: flex;
+    
     align-items: center;
-    justify-content: space-evenly;
-    a{
-    color: white;
+   }
+
+   li:hover{
+    background-color: #b51f1f;
+   }
+
+   a{
+    color: #efefef;
+    text-decoration: none;
+    font-family: Valo;
+    font-size: 30px;
+   }
 }
+   
+   
+// The main thing to make action 
+// `max-width` from 0 to some actual value will enable animation (not just width changing)
+#toggler:checked + .sidebar{
+    
+   max-width: min(250px, 80vw);
 }
+
+
+
+
 

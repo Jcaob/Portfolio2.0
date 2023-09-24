@@ -3,3 +3,53 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    display: flex;
+    justify-content: space-around;
+    background-color: #b51f1f;
+}
+
+.box-border {
+    width: 50rem;
+    height: 50rem;
+    position: fixed;
+    border: 5px solid #181818;
+    opacity: .05;
+    transform: rotate(45deg);
+    animation: SpinAnim 3s ease-in-out 0s infinite alternate;
+}
+
+.box-border2 {
+    width: 30rem;
+    height: 30rem;
+    position: fixed;
+    margin-top: 50px;
+    border: 5px solid #181818;
+    opacity: .05;
+    transform: rotate(45deg);
+    animation: SpinAnim 3s ease-in-out 0s infinite alternate;
+}
+
+
+@keyframes SpinAnim {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    25% {
+        transform: rotate(-45deg);
+    }
+
+    50% {
+        transform: rotate(-135deg);
+    }
+
+    75% {
+        transform: rotate(-225deg);
+    }
+
+    100% {
+        transform: rotate(-315deg);
+    }
+}
